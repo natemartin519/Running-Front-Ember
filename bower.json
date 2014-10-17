@@ -1,0 +1,22 @@
+{
+  "name": "Front",
+  "version": "0.0.1",
+  "main": "index.html",
+  "authors": [
+    "Nathan Martin <natemartin519@gmail.com>"
+  ],
+  "description": "Front end for running app.",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ember": "~1.8.0-beta",
+    "ember-data": "~1.0.0-beta",
+    "bootstrap-sass-official": "~3.2.0"
+  }
+}
