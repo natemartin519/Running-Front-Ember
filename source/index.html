@@ -2,31 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ember App</title>
+    <title>Runners Map</title>
 
-    <link rel="stylesheet" href="./assets/css/default.css">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <style type="text/css">
+        html,
+        body,
+        .ember-view,
+        .ember-view .container-fluid,
+        .ember-view .row,
+        .ember-view .col-md-10,
+        .ember-view .map-canvas
+        {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .map-canvas {
+            border-left-style: solid;
+            border-left-color: #eee;
+            border-left-width: 2px;
+        }
+
+        .menu {
+            background-color: #9DC6D8;
+            height: 100%;
+        }
+
+    </style>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaPseCLcboNGXK2Jj1TZUAEaNU5TC0cyI&libraries=visualization"></script>
 </head>
-
 <body>
-    <script type="text/x-handlebars">
-        {{outlet}}
-    </script>
+
+    <!--240,1100,340-->
 
     <script type="text/x-handlebars" id="index">
-        <h1>{{title}}</h1>
-        <p>Welcome to your new EmberJS app!</p>
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-sm-3 col-md-2 menu">
+                    {{main-menu title="Running Map" items=["Item 1","Item 2","Item 3"]}}
+                </div>
+
+                <div class="col-sm-9 col-md-10 main">
+                    {{google-maps latitude="43.45" longitude="-80.4833"}}
+                </div>
+
+            </div>
+        </div>
     </script>
 
-    <script type="text/x-handlebars" id="about">
-        <h1>{{title}}</h1>
-        <p>This is an app template that uses EmberJS and Gulp task runner.</p>
+    <script type="text/x-handlebars" id="components/main-menu">
+         <div class="page-header text-center">
+            <h1>{{title}}</h1>
+         </div>
+
+        <ui class="nav nav-pills nav-stacked">
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+        </ui>
     </script>
 
-    <script src="./assets/js/jquery.min.js" type="text/javascript"></script>
-    <script src="./assets/js/handlebars.min.js" type="text/javascript"></script>
-    <script src="./assets/js/ember.min.js" type="text/javascript"></script>
-    <script src="./assets/js/ember-data.min.js" type="text/javascript"></script>
-    <script src="./assets/js/bootstrap.js" type="text/javascript"></script>
-    <script src="./assets/js/app.js" type="text/javascript"></script>
+    <script type="text/x-handlebars" id="components/google-maps">
+        <div class="map-canvas"></div>
+    </script>
+
+    <!--<script type="text/x-handlebars" id="index">-->
+
+    <!--</script>-->
+
+<script src="./assets/js/jquery.min.js" type="text/javascript"></script>
+<script src="./assets/js/ember.min.js" type="text/javascript"></script>
+<script src="./assets/js/ember-data.min.js" type="text/javascript"></script>
+<script src="./assets/js/bootstrap.js" type="text/javascript"></script>
+<script src="./assets/js/app.js" type="text/javascript"></script>
 </body>
+
+
 </html>

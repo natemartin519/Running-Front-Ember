@@ -15,8 +15,8 @@
     "tests"
   ],
   "dependencies": {
-    "ember": "~1.8.0-beta",
-    "ember-data": "~1.0.0-beta",
+    "ember": "beta",
+    "ember-data": "beta",
     "bootstrap-sass-official": "~3.2.0"
   }
 }
